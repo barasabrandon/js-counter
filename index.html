@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="counter">
+      <button class="counter-button" id="decrement">-</button>
+      <span class="counter-value" id="count">0</span>
+      <button class="counter-button" id="increment">+</button>
+    </div>
+
+    <script>
+      const incrementButton = document.getElementById('increment');
+      const countElement = document.getElementById('count');
+      const decrementButton = document.getElementById('decrement');
+
+      let count = 0;
+
+      function increment(event) {
+        if (count == 10) {
+          alert('You cannot increase further!');
+        } else {
+          count = count + 1;
+        }
+        // count += 1;
+        countElement.innerText = count;
+      }
+
+      function decrement(event) {
+        if (count == 0) {
+          alert('You cannot decrease further!');
+          // console.log('User cannot decrease further');
+        } else {
+          count = count - 1;
+        }
+
+        countElement.innerText = count;
+      }
+
+      incrementButton.addEventListener('click', increment);
+      decrementButton.addEventListener('click', decrement);
+    </script>
+  </body>
+</html>
